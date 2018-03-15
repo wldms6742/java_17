@@ -34,6 +34,13 @@ public abstract class StudentDTO {
 	private int id;
 	private String name;
 	private int age;
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	private String birth;
 	private String job;
+	private String email;
 }
