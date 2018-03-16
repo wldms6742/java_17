@@ -96,7 +96,7 @@ public class TeacherDAO implements MemberDAO {
 		ResultSet rs = st.executeQuery();
 		
 		st.setInt(1, id);
-		rs.next();
+		if(rs.next()) {
 		MemberDTO memberDTO = new TeacherDTO();
 		memberDTO.setName(rs.getString("name"));
 		memberDTO.setId(rs.getInt("id"));
@@ -105,7 +105,9 @@ public class TeacherDAO implements MemberDAO {
 		memberDTO.setEmail(rs.getString("email"));
 		memberDTO.setJob(rs.getString("job"));
 		((TeacherDTO)memberDTO).setSal(rs.getInt("sal"));
-		
+		}else {
+			MemberDTO memberDTO = null;
+		}
 		DBConnector.disConnect(rs, st, con);
 		
 		return memberDTO; 
