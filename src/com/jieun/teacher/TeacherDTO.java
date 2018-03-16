@@ -1,8 +1,9 @@
 package com.jieun.teacher;
 
-import com.jieun.student.StudentDTO;
+import com.jieun.member.MemberDTO;
 
-public class TeacherDTO extends StudentDTO {
+
+public class TeacherDTO extends MemberDTO{
 	private int sal;
 
 	public int getSal() {
